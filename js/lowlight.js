@@ -25,7 +25,12 @@ function lowlight(lang, lexer, code) {
             ret += cur.text;
         } else {
             ret += "<span class=\"";
-            ret += cur.type.string;
+            for (var type in cur.type.__proto__.getT$all()) {
+                if (type === undefined) break;
+                ret += type.replace(/.*:/, "");
+                if (type == "ceylon.lexer.core::TokenType") break;
+                ret += " ";
+            }
             ret += "\">";
             ret += escape(cur.text);
             ret += "</span>";
