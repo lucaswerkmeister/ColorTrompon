@@ -1,0 +1,54 @@
+/*
+  See ceylon-ide-eclipse: plugins/com.redhat.ceylon.eclipse.ui/plugin.xml,
+  com.redhat.ceylon.eclipse.ui.theme
+ */
+
+.KeywordType {
+    font-weight: bold;
+    color: rgb(76,76,76);
+}
+
+.backtick {
+    color: black;
+}
+
+.lidentifier { /* unqualified lidentifier */
+    color: rgb(0,51,153);
+}
+
+.memberOp + .lidentifier { /* qualified lidentifier */
+    color: rgb(102,51,153);
+}
+
+.uidentifier {
+    color: rgb(153,0,102);
+}
+
+.NumericLiteralType {
+    color: blue;
+}
+
+.StringLiteralType {
+    color: blue;
+}
+
+.characterLiteral {
+    color: blue;
+}
+
+.lineComment, .multiComment {
+    color: dark gray;
+}
+
+.lineComment[content*=TODO], .lineComment[content*=FIXME], .multiComment[content*=TODO], .multiComment[content*=FIXME] {
+    color: rgb(255,128,0);
+    font-weight: bold;
+}
+
+.semicolon {
+    color: black;
+}
+
+.lbrace, .rbrace {
+    color: black;
+}
