@@ -31,8 +31,11 @@ function lowlight(lang, lexer, code) {
                 if (type == "ceylon.lexer.core::TokenType") break;
                 ret += " ";
             }
+            var escaped = escape(cur.text);
+            ret += "\" content=\"";
+            ret += escaped;
             ret += "\">";
-            ret += escape(cur.text);
+            ret += escaped;
             ret += "</span>";
         }
     }
