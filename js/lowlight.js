@@ -15,11 +15,21 @@ function lowlight(lang, lexer, code) {
     var lex = lexer.CeylonLexer(lexer.StringCharacterStream(code));
     var cur;
     while ((cur = lex.nextToken()) != null) {
-        ret += "<span class=\"";
-        ret += cur.type.string;
-        ret += "\">";
-        ret += escape(cur.text);
-        ret += "</span>";
+        if (cur.type.string == "whitespace") {
+            /* 
+               don’t put whitespace in a span –
+               this way, styles can use CSS selectors
+               based on the immediately previous node
+               without worrying about whitespace
+             */
+            ret += cur.text;
+        } else {
+            ret += "<span class=\"";
+            ret += cur.type.string;
+            ret += "\">";
+            ret += escape(cur.text);
+            ret += "</span>";
+        }
     }
     return ret;
 }
