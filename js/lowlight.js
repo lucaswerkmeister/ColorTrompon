@@ -1,4 +1,4 @@
 "use strict";
-function lowlight(code) {
+function lowlight(lang, lexer, code) {
     return "Hello, " + code + "!";
 }
