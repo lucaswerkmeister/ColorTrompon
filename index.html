@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="application-name" content="ceylon-lowlighter"/>
+  <meta name="author" content="Lucas Werkmeister"/>
+  <meta name="description" content="Add syntax highlighting to Ceylon source code"/>
+  <meta name="keywords" content="lowlight,highlight,syntax,ceylon"/>
+  <script async src="js/lowlight.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    "use strict";
+    function onSubmit() {
+        var codeInput = document.getElementById('code');
+        var code = codeInput.value;
+        var styleInput = document.getElementById('style');
+        var style = styleInput.value;
+        codeInput.disabled = true;
+        styleInput.disabled = true;
+        var lowlitElem = document.getElementById('lowlit');
+        var lowlit = lowlight(code);
+        lowlitElem.innerHTML = lowlit;
+        codeInput.disabled = false;
+        styleInput.disabled = false;
+    }
+    </script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <title>Ceylon Lowlighter</title>
+</head>
+<body style="margin: 8px;">
+  <div class="container">
+    <div class="page-header">
+      <h1>Ceylon Lowlighter <small>a tiny Ceylon syntax highlighter</small></h1>
+      <p>
+        Ceylon Lowlighter adds syntax highlighting to a Ceylon code snippet, based purely on lexical analysis.
+      </p>
+    </div>
+    <form id="mainForm" role="form">
+      <div class="form-group">
+        <label for="code">Code</label>
+        <textarea id="code" class="form-control" placeholder="Paste the code here" rows="16" autofocus></textarea>
+      </div>
+      <div class="form-group">
+        <label for="style">Style</label>
+        <select id="style" class="form-control">
+          <option value="eclipse" selected>Eclipse</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button id="submit" class="form-control btn btn-primary" type="submit" onclick="onSubmit(); return false">Submit</button>
+      </div>
+      <div class="form-group">
+        <label for="lowlit">Highlighted code</label>
+        <pre id="lowlit" class="form-control">Highlighted code will go here</pre>
+      </div>
+    </form>
+  </div>
+  <a href="https://github.com/lucaswerkmeister/ceylon-lowlighter">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+  </a>
+</body>
+</html>
