@@ -1,7 +1,9 @@
 "use strict";
 
 /*
-  NOT a general purpose escaper! Only valid when *content* of a tag, not within an attribute.
+  NOT a general purpose escaper! Use at your own risk.
+  (Fine for our use because everything happens in the client –
+  if people want to break that, not our problem :) )
  */
 function escape(code) {
     return code
