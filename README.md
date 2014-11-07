@@ -1,7 +1,7 @@
-ceylon-lowlighter
+ColorTrompon
 =================
 
-A tiny Ceylon syntax highlighter.
+A Ceylon syntax highlighter.
 
 License
 -------

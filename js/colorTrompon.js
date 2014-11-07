@@ -12,7 +12,7 @@ function escape(code) {
         .replace("\'", "&apos;", "g");
 }
 
-function lowlight(lang, lexer, code) {
+function colorTrompon(lang, lexer, code) {
     var ret = "";
     var lex = lexer.CeylonLexer(lexer.StringCharacterStream(code));
     var cur;
