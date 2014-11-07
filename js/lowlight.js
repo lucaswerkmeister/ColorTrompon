@@ -7,7 +7,9 @@ function escape(code) {
     return code
         .replace("&", "&amp;", "g")
         .replace("<", "&lt;", "g")
-        .replace(">", "&gt;", "g");
+        .replace(">", "&gt;", "g")
+        .replace("\"", "&quot;", "g")
+        .replace("\'", "&apos;", "g");
 }
 
 function lowlight(lang, lexer, code) {
