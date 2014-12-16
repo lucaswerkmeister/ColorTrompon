@@ -1,5 +1,12 @@
 "use strict";
 
+require.config({
+    baseUrl: 'js'
+});
+var lang;
+var lexer;
+require(['ceylon/language/1.1.0/ceylon.language-1.1.0', 'ceylon/lexer/core/1.1.0/ceylon.lexer.core-1.1.0'], function(la, le) { lang = la; lexer = le; });
+
 /*
   NOT a general purpose escaper! Use at your own risk.
   (Fine for our use because everything happens in the client –
@@ -44,4 +51,23 @@ function colorTrompon(lang, lexer, code) {
         }
     }
     return ret;
+}
+
+function onSubmit() {
+    var codeInput = document.getElementById('code');
+    var code = codeInput.value;
+    codeInput.disabled = true;
+    var highlitElem = document.getElementById('highlit');
+    var highlit = colorTrompon(lang, lexer, code);
+    highlitElem.innerHTML = highlit;
+    var highlitGroup = document.getElementById('highlitGroup');
+    highlitGroup.classList.remove('hidden');
+    codeInput.disabled = false;
+}
+
+function updateCss() {
+    var styleInput = document.getElementById('style');
+    var style = styleInput.value;
+    var styleLink = document.getElementById('styleLink');
+    styleLink.href = "css/" + style + ".css";
 }

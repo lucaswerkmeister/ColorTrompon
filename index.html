@@ -7,36 +7,7 @@
   <meta name="description" content="Add syntax highlighting to Ceylon source code"/>
   <meta name="keywords" content="ColorTrompon,highlight,syntax,ceylon,trompon"/>
   <script src="js/require.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    "use strict";
-    require.config({
-        baseUrl: 'js'
-    });
-    var lang;
-    var lexer;
-    require(['ceylon/language/1.1.0/ceylon.language-1.1.0', 'ceylon/lexer/core/1.1.0/ceylon.lexer.core-1.1.0'], function(la, le) { lang = la; lexer = le; });
-  </script>
   <script src="js/colorTrompon.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    "use strict";
-    function onSubmit() {
-        var codeInput = document.getElementById('code');
-        var code = codeInput.value;
-        codeInput.disabled = true;
-        var highlitElem = document.getElementById('highlit');
-        var highlit = colorTrompon(lang, lexer, code);
-        highlitElem.innerHTML = highlit;
-        var highlitGroup = document.getElementById('highlitGroup');
-        highlitGroup.classList.remove('hidden');
-        codeInput.disabled = false;
-    }
-    function updateCss() {
-        var styleInput = document.getElementById('style');
-        var style = styleInput.value;
-        var styleLink = document.getElementById('styleLink');
-        styleLink.href = "css/" + style + ".css";
-    }
-    </script>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link id="styleLink" rel="stylesheet" href="css/eclipse.css">
   <title>ColorTrompon</title>
