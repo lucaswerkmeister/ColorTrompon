@@ -26,6 +26,8 @@
         var highlitElem = document.getElementById('highlit');
         var highlit = colorTrompon(lang, lexer, code);
         highlitElem.innerHTML = highlit;
+        var highlitGroup = document.getElementById('highlitGroup');
+        highlitGroup.classList.remove('hidden');
         codeInput.disabled = false;
     }
     function updateCss() {
@@ -62,7 +64,7 @@
       <div class="form-group">
         <button id="submit" class="form-control btn btn-primary" type="submit" onclick="onSubmit(); return false">Highlight</button>
       </div>
-      <div class="form-group">
+      <div class="form-group hidden" id="highlitGroup">
         <label for="highlit">Highlighted code</label>
         <pre id="highlit" class="form-control pre-scrollable" style="height:auto; overflow-y:auto">Highlighted code will go here</pre>
       </div>
