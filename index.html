@@ -35,9 +35,18 @@
       <div class="form-group">
         <button id="submit" class="form-control btn btn-primary" type="submit" onclick="onSubmit(); return false">Highlight</button>
       </div>
-      <div class="form-group hidden" id="highlitGroup">
-        <label for="highlit">Highlighted code</label>
-        <pre id="highlit" class="form-control pre-scrollable" style="height:auto; overflow-y:auto">Highlighted code will go here</pre>
+      <div class="hidden" id="highlitGroup">
+        <div class="form-group">
+          <label for="highlit">Highlighted code</label>
+          <pre id="highlit" class="form-control pre-scrollable" style="height:auto; overflow-y:auto">Highlighted code will go here</pre>
+        </div>
+        <div class="form-group">
+          <button id="apply" class="form-control btm btn-info" type="submit" onclick="onApply(); return false">Apply styles directly (for copying)</button>
+        </div>
+        <div class="form-group hidden" id="appliedGroup">
+          <label for="applied">Highlighted code with directly applied styles</label>
+          <pre id="applied" class="form-control pre-scrollable" style="height:auto; overflow-y:auto">Highlighted code will go here</pre>
+        </div>
       </div>
     </form>
   </div>

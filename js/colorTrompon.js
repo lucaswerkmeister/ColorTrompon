@@ -65,6 +65,22 @@ function onSubmit() {
     codeInput.disabled = false;
 }
 
+function onApply() {
+    var highlit = document.getElementById('highlit');
+    var applied = document.getElementById('applied');
+    applied.innerHTML = highlit.innerHTML;
+    for (var i=0; i<applied.children.length; i++) {
+        var child = applied.children[i];
+        var style = window.getComputedStyle(child);
+        child.style.fontWeight = style.fontWeight;
+        child.style.color = style.color;
+        child.removeAttribute("class");
+        child.removeAttribute("content");
+    }
+    var appliedGroup = document.getElementById('appliedGroup');
+    appliedGroup.classList.remove('hidden');
+}
+
 function updateCss() {
     var styleInput = document.getElementById('style');
     var style = styleInput.value;
