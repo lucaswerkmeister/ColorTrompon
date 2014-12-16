@@ -52,3 +52,7 @@
 .lbrace, .rbrace {
     color: black;
 }
+
+.lidentifier[content=shared], .lidentifier[content=abstract], .lidentifier[content=formal], .lidentifier[content=default], .lidentifier[content=actual], .lidentifier[content=variable], .lidentifier[content=late], .lidentifier[content=native], .lidentifier[content=deprecated], .lidentifier[content=final], .lidentifier[content=sealed], .lidentifier[content=annotation], .lidentifier[content=small], .lidentifier[content=doc], .lidentifier[content=by], .lidentifier[content=license], .lidentifier[content=see], .lidentifier[content=throws], .lidentifier[content=tagged] {
+    color: rgb(51,153,204);
+}
