@@ -37,7 +37,7 @@
 }
 
 .lineComment, .multiComment {
-    color: dark gray;
+    color: darkgray;
 }
 
 .lineComment[content*=TODO], .lineComment[content*=FIXME], .multiComment[content*=TODO], .multiComment[content*=FIXME] {
