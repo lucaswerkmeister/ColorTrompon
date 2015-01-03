@@ -74,6 +74,8 @@ function onApply() {
         var style = window.getComputedStyle(child);
         child.style.fontWeight = style.fontWeight;
         child.style.color = style.color;
+    }
+    for (var i=0; i<applied.children.length; i++) {
         child.removeAttribute("class");
         child.removeAttribute("content");
     }
